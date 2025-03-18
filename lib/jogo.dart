@@ -88,6 +88,24 @@ class _JogoState extends State<Jogo> {
               ),
             ),
           ),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              GestureDetector(
+                onTap: () => _opcaoSelecionada('pedra'),
+                child: Image.asset('imagem/pedra.png', height: 100,),
+              ),
+              GestureDetector(
+                onTap: () => _opcaoSelecionada('papel'),
+                child: Image.asset('imagem/papel.png', height: 100,),
+              ),
+              GestureDetector(
+                onTap: () => _opcaoSelecionada('tesoura'),
+                child: Image.asset('imagem/tesoura.png', height: 100,),
+              ),
+            ],
+          ),
         ],
       ),
     );
