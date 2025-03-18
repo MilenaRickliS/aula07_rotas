@@ -13,7 +13,7 @@ class Jogo extends StatefulWidget {
 }
 
 class _JogoState extends State<Jogo> {
-  var _imagemApp = AssetImage('imagem/padrao.png')!;
+  var _imagemApp = AssetImage('imagem/padrao.png');
   var _mensagem = 'Escolha sua opção abaixo';
 
   final Map<String, AssetImage> _opcaoImagem = {
@@ -28,7 +28,7 @@ class _JogoState extends State<Jogo> {
     var escolhaApp = opcoes[numero];
 
     setState(() {
-      this._imagemApp = _opcaoImagem[escolhaApp]!;
+      _imagemApp = _opcaoImagem[escolhaApp]!;
 
       if(
         (escolhaUsuario == 'pedra' && escolhaApp == 'tesoura') ||
@@ -36,7 +36,7 @@ class _JogoState extends State<Jogo> {
         (escolhaUsuario == 'papel' && escolhaApp == 'pedra')
       ){
         setState(() {
-          this._mensagem = 'Parabéns!!! Você ganhou :)';
+          _mensagem = 'Parabéns!!! Você ganhou :)';
         });
       }else if(
         (escolhaApp == 'pedra' && escolhaUsuario == 'tesoura') ||
@@ -44,11 +44,11 @@ class _JogoState extends State<Jogo> {
         (escolhaApp == 'papel' && escolhaUsuario == 'pedra')
       ){
         setState(() {
-          this._mensagem = 'Você perdeu :(';
+          _mensagem = 'Você perdeu :(';
         });
       } else{
         setState(() {
-          this._mensagem = 'Empatamos ;)';
+          _mensagem = 'Empatamos ;)';
         });
       }
     });
@@ -76,11 +76,11 @@ class _JogoState extends State<Jogo> {
               ),
             ),
           ),
-          Image(image: this._imagemApp),
+          Image(image: _imagemApp),
           Padding(
             padding: EdgeInsets.only(top: 32, bottom: 16),
             child: Text(
-              this._mensagem,
+              _mensagem,
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 20,
